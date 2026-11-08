@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea Tarjetas</title>
+    <style>
+        .selector-tema {
+          display: none;
+        }
+        .pagina {
+          min-height: 100vh;
+          padding: 20px;
+          background-color: #ffffff;
+          color: #222222;
+          transition: background-color 0.9s ease, color 0.9s ease;
+          font-family: Arial, sans-serif;
+        }
+        .catalogo {
+          width: 90%;
+          margin: 0 auto;  
+          display: grid;   
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+        }
+        .tarjeta {
+          width: 170px;  
+          min-height: 200px;
+          padding: 15px;
+          margin-top: 15px;
+          margin-bottom: 40px ;
+          display: flex;
+          border-radius: 20%;          
+          flex-direction: column;
+          justify-content: center; 
+          align-items: center;  
+          text-align: center;
+          background-color: rgb(227, 103, 243);
+          box-shadow: 5px 5px rgba(154, 45, 226, 0.7);
+          transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+        .tarjeta:hover {
+          transform: translateY(-4px);
+          border: 2px solid rgba(53, 0, 102, 0.7);  
+        }
+        .tarjeta img {
+           width: 110px;
+           height: 110px;
+           object-fit: cover;
+           border-radius: 8px;
+           margin-bottom: 10px;
+        }
+        .tarjetaModoOscuro {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 8px 14px;
+          float: right;
+          border-radius: 20px;          
+          background-color: rgb(120, 11, 134);
+          color: #ffffff;
+          cursor: pointer;
+          box-shadow: 3px 3px rgba(181, 70, 255, 0.7);
+          user-select: none;
+        }
+        .tarjetaModoOscuro img {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+        }
+        .tarjetaModoOscuro:hover {
+          border: 2px solid rgba(255, 255, 255, 0.8);  
+        }
+        .btn-claro { display: none; }
+        .btn-oscuro { display: inline-flex; }
+
+        #tema-oscuro:checked ~ .pagina {
+          background-color: #121212;
+          color: #f0f0f0;
+        }
+        #tema-oscuro:checked ~ .pagina .tarjeta {
+          background-color: #2b1130;
+          color: #ffffff;
+          box-shadow: 5px 5px rgba(0, 0, 0, 0.8);
+          border: 1px solid #5a2066;
+        }
+        /* Cambia el boton dependiendo el modo en el que se encuentre */
+        #tema-oscuro:checked ~ .pagina .btn-oscuro { display: none; }
+        #tema-oscuro:checked ~ .pagina .btn-claro { display: inline-flex; }
+        
+    </style>
+</head>
+<body>
+  <input type="radio" name="tema" id="tema-claro" class="selector-tema" checked>
+  <input type="radio" name="tema" id="tema-oscuro" class="selector-tema">
+  <div class="pagina">
+    <label for="tema-oscuro" class="tarjetaModoOscuro btn-oscuro">
+      <img src="https://images.unsplash.com/vector-1762021885090-5c631ddfa33e?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Icono luna">
+      <span>Modo Oscuro</span>
+    </label>
+    <label for="tema-claro" class="tarjetaModoOscuro btn-claro">
+        <img src="https://images.unsplash.com/vector-1756860574578-02605c8c8513?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Icono Sol">
+      <span>Modo Claro</span>
+    </label>
+    <h2 style="clear: both; padding-top: 10px;">Catálogo de Audífonos</h2>
+    <div class="catalogo">
+      <div class="tarjeta">
+        <img src="https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de audífono"> 
+        <div>Audífonos inalámbrico Rosa<br><br></div>      
+        <span>$800.00</span>
+      </div> 
+      <div class="tarjeta">
+        <img src="https://plus.unsplash.com/premium_photo-1679513691641-9aedddc94f96?q=80&w=813&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de audífono"> 
+        <div>Audífonos inalámbrico Azul Claro<br><br></div>      
+        <span>$600.00</span>
+      </div>
+      <div class="tarjeta">
+        <img src="https://plus.unsplash.com/premium_photo-1779201890623-cd18d7d00cc6?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de audífono"> 
+        <div>Audífonos inalámbrico<br><br></div>      
+        <span>$1,200.00</span>
+      </div> 
+      <div class="tarjeta">
+        <img src="https://plus.unsplash.com/premium_photo-1777901534197-98ffbdfe5bcb?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de audífono"> 
+        <div>Audífonos negro<br><br></div>      
+        <span>$900.00</span>
+      </div>
+      <div class="tarjeta">
+        <img src="https://plus.unsplash.com/premium_photo-1760531742626-eaf6b956f320?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de audífono"> 
+        <div>Audífonos de Cable<br><br></div>      
+        <span>$800.00</span>
+      </div> 
+      <div class="tarjeta">
+        <img src="https://plus.unsplash.com/premium_photo-1775985176807-5c172fb43e16?q=80&w=829&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de teclado"> 
+        <div>Audifonos tornasol<br><br></div>      
+        <span>$300.00</span>
+      </div>
+      <div class="tarjeta">
+        <img src="https://plus.unsplash.com/premium_photo-1677158265072-5d15db9e23b2?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de audífono"> 
+        <div>Audífonos inalámbrico oreja cuadrada<br><br></div>      
+        <span>$800.00</span>
+      </div> 
+      <div class="tarjeta">
+        <img src="https://plus.unsplash.com/premium_photo-1679913793289-d1ba3b9b0187?q=80&w=484&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de teclado"> 
+        <div>Audifonos inalambricos Rosas<br><br></div>      
+        <span>$300.00</span>
+      </div>
+    </div> 
+  </div>
+</body>
+</html>
