@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tarea CuadroBusqueda</title>
+    <script> 
+    /* Declaración y ejecución de la función de forma automática */
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+        </script>
+</head>
+<body>
+  <input type="radio" name="tema" id="tema-claro" class="selector-tema" checked>
+  <input type="radio" name="tema" id="tema-oscuro" class="selector-tema">
+  <div class="pagina">
+    <label for="tema-oscuro" class="tarjetaModoOscuro btn-oscuro">
+      <img src="https://images.unsplash.com/vector-1762021885090-5c631ddfa33e?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Icono luna">
+      <span>Modo Oscuro</span>
+    </label>
+    <label for="tema-claro" class="tarjetaModoOscuro btn-claro">
+        <img src="https://images.unsplash.com/vector-1756860574578-02605c8c8513?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Icono Sol">
+      <span>Modo Claro</span>
+    </label>
+    <div class="search-container">
+        <input type="text" class="search" id="inputBusqueda" placeholder="Busca un producto (ej. audifonos, teclado)...">
+    </div> 
+    <h2 style="clear: both; padding-top: 10px;">Catálogo de Audífonos</h2>
+    <div class="catalogo">
+      <div class="tarjeta" data-nombre="Audífonos inalambricos Rosa">
+        <img src="https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de audífono"> 
+        <div>Audífonos inalámbrico Rosa<br><br></div>      
+        <span>$800.00</span>
+      </div> 
+      <div class="tarjeta" data-nombre="Audífonos inalámbrico Azul Claro">
+        <img src="https://plus.unsplash.com/premium_photo-1679513691641-9aedddc94f96?q=80&w=813&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de audífono"> 
+        <div>Audífonos inalámbrico Azul Claro<br><br></div>      
+        <span>$600.00</span>
+      </div>
+      <div class="tarjeta" data-nombre="Audífonos inalámbrico">
+        <img src="https://plus.unsplash.com/premium_photo-1779201890623-cd18d7d00cc6?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de audífono"> 
+        <div>Audífonos inalámbrico<br><br></div>      
+        <span>$1,200.00</span>
+      </div> 
+      <div class="tarjeta" data-nombre="Audífonos negro">
+        <img src="https://plus.unsplash.com/premium_photo-1777901534197-98ffbdfe5bcb?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de audífono"> 
+        <div>Audífonos negro<br><br></div>      
+        <span>$900.00</span>
+      </div>
+      <div class="tarjeta" data-nombre="Audífonos de Cable">
+        <img src="https://plus.unsplash.com/premium_photo-1760531742626-eaf6b956f320?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de audífono"> 
+        <div>Audífonos de Cable<br><br></div>      
+        <span>$800.00</span>
+      </div> 
+      <div class="tarjeta" data-nombre="Audifonos tornasol">
+        <img src="https://plus.unsplash.com/premium_photo-1775985176807-5c172fb43e16?q=80&w=829&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de teclado"> 
+        <div>Audifonos tornasol<br><br></div>      
+        <span>$300.00</span>
+      </div>
+      <div class="tarjeta" data-nombre="Audífonos inalámbrico oreja cuadrada">
+        <img src="https://plus.unsplash.com/premium_photo-1677158265072-5d15db9e23b2?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de audífono"> 
+        <div>Audífonos inalámbrico oreja cuadrada<br><br></div>      
+        <span>$800.00</span>
+      </div> 
+      <div class="tarjeta" data-nombre="Audifonos inalambricos Rosas">
+        <img src="https://plus.unsplash.com/premium_photo-1679913793289-d1ba3b9b0187?q=80&w=484&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Imagen de teclado"> 
+        <div>Audifonos inalambricos Rosas<br><br></div>      
+        <span>$300.00</span>
+      </div>
+       <div class="not-found" id="noEncontrado">No se encontraron productos con ese nombre.</div>
+    </div> 
+  </div>
+  <script src="funciones.js"></script> 
+</body>
+</html>
