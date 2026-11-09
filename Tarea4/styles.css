@@ -1,0 +1,114 @@
+.selector-tema {
+          display: none;
+        }
+        .pagina {
+          min-height: 100vh;
+          padding: 20px;
+          background-color: #ffffff;
+          color: #222222;
+          --primary-color:   rgb(120, 11, 134);
+          transition: background-color 0.9s ease, color 0.9s ease;
+          font-family: Arial, sans-serif;
+        }
+        .catalogo {
+          width: 90%;
+          margin: 0 auto;  
+          display: grid;   
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+        }
+        .tarjeta {
+          width: 170px;  
+          min-height: 200px;
+          padding: 15px;
+          margin-top: 15px;
+          margin-bottom: 40px ;
+          display: flex;
+          border-radius: 20%;          
+          flex-direction: column;
+          justify-content: center; 
+          align-items: center;  
+          text-align: center;
+          background-color: rgb(227, 103, 243);
+          box-shadow: 5px 5px rgba(154, 45, 226, 0.7);
+          transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+        .tarjeta:hover {
+          transform: translateY(-4px);
+          border: 2px solid rgba(53, 0, 102, 0.7);  
+        }
+        .tarjeta img {
+           width: 110px;
+           height: 110px;
+           object-fit: cover;
+           border-radius: 8px;
+           margin-bottom: 10px;
+        }
+        .tarjetaModoOscuro {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 8px 14px;
+          float: right;
+          border-radius: 20px;          
+          background-color: rgb(120, 11, 134);
+          color: #ffffff;
+          cursor: pointer;
+          box-shadow: 3px 3px rgba(181, 70, 255, 0.7);
+          user-select: none;
+        }
+        .tarjetaModoOscuro img {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+        }
+        .tarjetaModoOscuro:hover {
+          border: 2px solid rgba(255, 255, 255, 0.8);  
+        }
+        .btn-claro { display: none; }
+        .btn-oscuro { display: inline-flex; }
+
+        #tema-oscuro:checked ~ .pagina {
+          background-color: #121212;
+          color: #f0f0f0;
+        }
+        #tema-oscuro:checked ~ .pagina .tarjeta {
+          background-color: #2b1130;
+          color: #ffffff;
+          box-shadow: 5px 5px rgba(0, 0, 0, 0.8);
+          border: 1px solid #5a2066;
+        }
+        /* Cambia el boton dependiendo el modo en el que se encuentre */
+        #tema-oscuro:checked ~ .pagina .btn-oscuro { display: none; }
+        #tema-oscuro:checked ~ .pagina .btn-claro { display: inline-flex; }
+
+        .not-found {
+            display: none;
+            grid-column: 1 / -1;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 40px;
+            color: var(--text-color);
+        }
+        /*CONTENEDOR DE BUSQUEDA */
+    .search-container{
+        width: 90%;
+        max-width: 1200px;
+        margin: 10px auto 30px auto;
+        text-align: center;
+    }
+
+    .search-container input{
+            width: 100%;
+            max-width: 500px;
+            padding: 12px 18px;
+            font-size: 16px;
+            border: 2px solid var(--primary-color);
+            border-radius: 12px;
+            outline: none;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            box-shadow: 0 4px 6px var(--shadow-color);
+    }
+    
